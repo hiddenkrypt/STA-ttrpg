@@ -164,14 +164,14 @@ window.onload = function () {
     let deckUp = document.getElementById("deckUp");
     let deckDown = document.getElementById("deckDown");
 	deckUp.addEventListener("click", ()=>{
-		if(currentDeck < 11){
-			currentDeck++;
+		if(currentDeck > 0){
+			currentDeck--;
 		}
 		setDeck();
 	});
 	deckDown.addEventListener("click", ()=>{
-		if(currentDeck > 0){
-			currentDeck--;
+		if(currentDeck < 11){
+			currentDeck++;
 		}
 		setDeck();
 	});
