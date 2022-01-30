@@ -160,43 +160,60 @@
 		</div>
 
 
-		<div id="divBox" style="text-align:center;">
-			<div id="buttonBox" style="float:left" >
-				<div>
-					<div style="
-						margin-bottom:.5em; 
-						margin-left:0;
-						font-weight:bold;
-						width:12em;  
-						color: #000; 
-						background-color:#58e;
-						height:4em;
-						border-radius: 0 60px 0 0 ;
-						">
-						<span  id="deckDisplay" style="font-size:2em">
-							DECK 00
-						</span>
-					</div>
-					<div id="deckUp" style="
-						margin-bottom:.5em; 
-						margin-left:2em; 
-						width:10em;  
-						color: #000; 
-						background-color:#8ff;
-						height:4em;
-						">
-						DECK UP
-					</div>
-					<div id="deckDown" style="
-						margin-bottom:.5em; 
-						margin-left:2em; 
-						width:10em;  
-						color: #000; 
-						background-color:#8ff;
-						height:4em;
-						">
-						DECK DOWN
-					</div>
+		<div id="divBox" 
+			style="text-align:center; 
+				flex-wrap:wrap;
+				flex-flow: row wrap;
+				displaY:flex;
+				gap:1em;">
+			<div id="buttonBox">
+				<div style="
+					margin-bottom:.5em; 
+					margin-left:0;
+					font-weight:bold;
+					width:12em;  
+					color: #000; 
+					background-color:#58e;
+					height:4em;
+					border-radius: 0 60px 0 0 ;
+					">
+					<span  id="deckDisplay" style="font-size:2em">
+						DECK 00
+					</span>
+				</div>
+				<div id="deckUp" style="
+					margin-bottom:.5em; 
+					margin-left:2em; 
+					width:10em;  
+					color: #000; 
+					background-color:#8ff;
+					height:4em;
+					user-select: none;
+					">
+					DECK UP
+				</div>
+				<div id="deckDown" style="
+					margin-bottom:.5em; 
+					margin-left:2em; 
+					width:10em;  
+					color: #000; 
+					background-color:#8ff;
+					height:4em;
+					user-select: none;
+					">
+					DECK DOWN
+				</div>
+				<div style="
+					margin-bottom:.5em; 
+					margin-left:2em; 
+					width:10em;  
+					color: #000; 
+					background-color:#455577;
+					height:4em;
+					user-select: none;
+					">
+					
+					<div class="panel-1"><a href="gallery.htm">Deck Plan Directory</a></div>
 				</div>
 			</div>
 			<canvas id="canvas" style="border:3px solid white; border-radius:10px;padding:1em;background-color:#000"/>
