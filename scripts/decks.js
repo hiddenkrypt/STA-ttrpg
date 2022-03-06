@@ -1,30 +1,24 @@
 //decks.js
 window.onload = function () {
-
+	let plottr = false;
+	if( typeof Plottr === "function" ){
+		plottr = new Plottr();
+	}
     let header = document.getElementById("header");
     let footer = document.getElementById("bottom");
     let canvas = document.getElementById("canvas");
     let ctx = canvas.getContext('2d');
+	ctx.imageSmoothingEnabled = false;
 
-    let cameraZoom = 1;
-    let MAX_ZOOM = 5;
-    let MIN_ZOOM = 0.1;
-    let SCROLL_SENSITIVITY = 0.0005;
+
     let isDragging = false
-    let initialPinchDistance = null;
-    let lastZoom = cameraZoom;
+	let currentTransformedCursor = {x:0,y:0};
+    let dragStart = {x:0,y:0};
+	
 	let loading = false;
-	let tick = 0;
 	let loadedFiles = 0;
 	let fileCount = 0;
-    let dragStart = {
-        x: 0,
-        y: 0
-    };
-    let cameraOffset = {
-        x: -9167 / 2,
-        y: -3000
-    };
+	
     function sizeCanvas() {
         canvas.height = window.innerHeight - (header.clientHeight * 1.25) - (footer.clientHeight * 1.25);
         canvas.width = (canvas.clientHeight / 9) * 16;
@@ -69,97 +63,55 @@ window.onload = function () {
 			setTimeout( checkLoading, 100);
 		} else {
 			console.log("loading complete");
+			ctx.scale(.1,.1);
 		}
 	}
 	
 	setTimeout( checkLoading, 100);
-	
-    // Gets the relevant location from a mouse or single touch event
-    function getEventLocation(e) {
-		let rect = canvas.getBoundingClientRect();
-        if (e.touches && e.touches.length == 1) {
-            return {
-                x: e.touches[0].clientX - rect.left,
-                y: e.touches[0].clientY - rect.top
-            };
-        } else if (e.clientX && e.clientY) {
-            return {
-                x: e.clientX - rect.left,
-                y: e.clientY - rect.top
-            };
-        }
-    }
 
+	function getWorldPoint( viewportPoint ){
+		const transform = ctx.getTransform();
+		const inverseZoom = 1 / transform.a;
+
+		const transformedX = inverseZoom * viewportPoint.x - inverseZoom * transform.e;
+		const transformedY = inverseZoom * viewportPoint.y - inverseZoom * transform.f;
+		return { x: transformedX, y: transformedY };
+	}
+	
     function onPointerDown(e) {
         isDragging = true;
-        dragStart.x = getEventLocation(e).x / cameraZoom - cameraOffset.x;
-        dragStart.y = getEventLocation(e).y / cameraZoom - cameraOffset.y;
-		console.log(cameraOffset.x +" : "+cameraOffset.y);
+		dragStart = getWorldPoint({x:e.offsetX, y:e.offsetY});
     }
 
     function onPointerUp(e) {
         isDragging = false;
         initialPinchDistance = null;
-        lastZoom = cameraZoom;
     }
 
     function onPointerMove(e) {
+		currentTransformedCursor = getWorldPoint({x:e.offsetX, y:e.offsetY});
         if (isDragging) {
-            cameraOffset.x = getEventLocation(e).x / cameraZoom - dragStart.x;
-            cameraOffset.y = getEventLocation(e).y / cameraZoom - dragStart.y;
+			ctx.translate(currentTransformedCursor.x - dragStart.x, currentTransformedCursor.y - dragStart.y);
         }
     }
 
-    function handleTouch(e, singleTouchHandler) {
-        if (e.touches.length == 1) {
-            singleTouchHandler(e);
-        } else if (e.type == "touchmove" && e.touches.length == 2) {
-            isDragging = false;
-            e.preventDefault();
-            let touch1 = {
-                x: e.touches[0].clientX,
-                y: e.touches[0].clientY
-            };
-            let touch2 = {
-                x: e.touches[1].clientX,
-                y: e.touches[1].clientY
-            };
-            let currentDistance = (touch1.x - touch2.x) ** 2 + (touch1.y - touch2.y) ** 2;
-
-            if (initialPinchDistance == null) {
-                initialPinchDistance = currentDistance;
-            } else {
-                adjustZoom(null, currentDistance / initialPinchDistance);
-            }
-        }
-    }
-
-    function adjustZoom(zoomAmount, zoomFactor) {
-        if (!isDragging) {
-            if (zoomAmount) {
-                cameraZoom += zoomAmount;
-            } else if (zoomFactor) {
-               // console.log(zoomFactor);
-                cameraZoom = zoomFactor * lastZoom;
-            }
-            cameraZoom = Math.min(cameraZoom, MAX_ZOOM)
-            cameraZoom = Math.max(cameraZoom, MIN_ZOOM);
-        }
-		console.log(cameraZoom);
-    }
-
-    document.addEventListener("touchstart", function () {}, false);
-    canvas.addEventListener('mousedown', onPointerDown);
-    canvas.addEventListener('touchstart', (e) => handleTouch(e, onPointerDown));
-    canvas.addEventListener('mouseup', onPointerUp);
-    canvas.addEventListener('touchend', (e) => handleTouch(e, onPointerUp));
-    canvas.addEventListener('mousemove', onPointerMove);
-    canvas.addEventListener('touchmove', (e) => handleTouch(e, onPointerMove));
-    canvas.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        adjustZoom(-e.deltaY * SCROLL_SENSITIVITY);
-    });
+	function onWheel(e){
+		const zoom = e.deltaY < 0 ? 1.1 : 0.9;
+		ctx.translate(currentTransformedCursor.x, currentTransformedCursor.y);
+		ctx.scale(zoom, zoom);
+		ctx.translate(-currentTransformedCursor.x, -currentTransformedCursor.y);
+		e.preventDefault();
+	}
 	
+    canvas.addEventListener('mousedown', onPointerDown);
+    canvas.addEventListener('mouseup', onPointerUp);
+    canvas.addEventListener('mousemove', onPointerMove);
+    canvas.addEventListener('wheel', onWheel);
+	if( plottr ){
+		canvas.addEventListener( 'mousemove', e=> plottr.hover( e, ctx ) );
+		canvas.addEventListener( 'contextmenu', e=> plottr.rightClick( e, ctx ) );
+		document.addEventListener( 'keydown', e=>plottr.keyDown ( e ) );
+	}
     let deckDisplay = document.getElementById("deckDisplay");
     let deckUp = document.getElementById("deckUp");
     let deckDown = document.getElementById("deckDown");
@@ -176,6 +128,7 @@ window.onload = function () {
 		setDeck();
 	});
 	function setDeck(){
+		if( plottr ){ plottr.setDeck( currentDeck ); }
 		deckDisplay.innerText = "DECK " + (currentDeck < 10? "0":"") + currentDeck;
 		if( currentDeck == 0 ){
 			deckUp.style.backgroundColor = "#aaa";
@@ -190,6 +143,9 @@ window.onload = function () {
 	}
 	var currentDeck = 0;
 	setDeck();
+	
+	
+	let tick = 0;
 	function renderFrame() {
 		if( loading ){
 			tick++;
@@ -207,20 +163,18 @@ window.onload = function () {
 			return;
 		}
 		ctx.save();
+		ctx.setTransform(1,0,0,1,0,0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        // Translate to the canvas centre before zooming - so you'll always zoom on what you're looking directly at
-        ctx.translate(canvas.width / 2, canvas.height / 2);
-        ctx.scale(cameraZoom, cameraZoom);
-		
-        ctx.translate(-canvas.width / 2, -canvas.height / 2);
-        ctx.translate(cameraOffset.x, cameraOffset.y);
+		ctx.restore();
 
 		ctx.drawImage( decks[currentDeck], 0, 0 );
-
-		ctx.restore();
-        requestAnimationFrame(renderFrame);
+		
+		if( plottr ){ plottr.render( ctx ); }
+	
+		
+		requestAnimationFrame(renderFrame);
     }
     renderFrame();
-};
 
+};
 
