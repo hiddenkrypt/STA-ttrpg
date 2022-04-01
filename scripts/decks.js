@@ -58,9 +58,8 @@ window.onload = function () {
 	setupImageLoad("decks/ship10.png");
 	setupImageLoad("decks/ship11.png");
     function checkLoading(){
-		loading = true;
-		//loading = loadedFiles != fileCount;
-		if( true || loading ){
+		loading = loadedFiles != fileCount;
+		if( loading ){
 			setTimeout( checkLoading, 100);
 		} else {
 			console.log("loading complete");
