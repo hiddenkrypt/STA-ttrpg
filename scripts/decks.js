@@ -58,8 +58,9 @@ window.onload = function () {
 	setupImageLoad("decks/ship10.png");
 	setupImageLoad("decks/ship11.png");
     function checkLoading(){
-		loading = loadedFiles != fileCount;
-		if( loading ){
+		loading = true;
+		//loading = loadedFiles != fileCount;
+		if( true || loading ){
 			setTimeout( checkLoading, 100);
 		} else {
 			console.log("loading complete");
@@ -79,16 +80,19 @@ window.onload = function () {
 	}
 	
     function onPointerDown(e) {
+		if( loading ){ return }
         isDragging = true;
 		dragStart = getWorldPoint({x:e.offsetX, y:e.offsetY});
     }
 
     function onPointerUp(e) {
+		if( loading ){ return }
         isDragging = false;
         initialPinchDistance = null;
     }
 
     function onPointerMove(e) {
+		if( loading ){ return }
 		currentTransformedCursor = getWorldPoint({x:e.offsetX, y:e.offsetY});
         if (isDragging) {
 			ctx.translate(currentTransformedCursor.x - dragStart.x, currentTransformedCursor.y - dragStart.y);
@@ -96,6 +100,7 @@ window.onload = function () {
     }
 
 	function onWheel(e){
+		if( loading ){ return }
 		const zoom = e.deltaY < 0 ? 1.1 : 0.9;
 		ctx.translate(currentTransformedCursor.x, currentTransformedCursor.y);
 		ctx.scale(zoom, zoom);
@@ -128,6 +133,7 @@ window.onload = function () {
 		setDeck();
 	});
 	function setDeck(){
+		if( loading ){ return }
 		if( plottr ){ plottr.setDeck( currentDeck ); }
 		deckDisplay.innerText = "DECK " + (currentDeck < 10? "0":"") + currentDeck;
 		if( currentDeck == 0 ){
@@ -146,31 +152,71 @@ window.onload = function () {
 	
 	
 	let tick = 0;
+	let tickMax = 700;
 	function renderFrame() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
 		if( loading ){
 			tick++;
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			ctx.font = "40px Antonio";
 			ctx.fillStyle = "#fff";
-			let lText= "LOADING..."; 
-			ctx.fillText(lText, canvas.width/2 - ctx.measureText(lText).width/2, canvas.height/3);
-			ctx.fillRect(0+tick,canvas.height/3-20, 10, 10 );
-			if( tick >= canvas.width ){
+			let lText= "LOADING"; 
+			var starfleetX = canvas.width/2 - 26;
+			var starfleetY = canvas.height/3;
+			ctx.fillText(lText+"...", canvas.width/2 - ctx.measureText(lText).width/2+14, starfleetY);
+			ctx.fillRect(-500+tick*3,canvas.height/2.3-(tick/2), 10, 10 );
+			if( tick >= tickMax ){
 				tick = 0;
 			}
-			
+			ctx.lineWidth = 2;
+			var circlePercent = .9;
+			ctx.beginPath();
+			ctx.arc(starfleetX+42, starfleetY+45, 30, 2, 2+((tick/tickMax)*2* Math.PI)); 
+			ctx.strokeStyle = "#fff";
+			ctx.stroke();
+			ctx.closePath();
+
+			ctx.beginPath();
+			ctx.moveTo(starfleetX+14, starfleetY+94);
+			ctx.bezierCurveTo(starfleetX+20, starfleetY+48, starfleetX+41, starfleetY+7 , starfleetX+41, starfleetY+7);
+			ctx.bezierCurveTo(starfleetX+55, starfleetY+33, starfleetX+64, starfleetY+62, starfleetX+67, starfleetY+85);
+			ctx.bezierCurveTo(starfleetX+64, starfleetY+74, starfleetX+57, starfleetY+62, starfleetX+50, starfleetY+60);
+			ctx.bezierCurveTo(starfleetX+43, starfleetY+59, starfleetX+33, starfleetY+68, starfleetX+14, starfleetY+94);
+			ctx.closePath();
+			ctx.fillStyle = "rgba(237,192,51,1)";
+			ctx.strokeStyle = "#000";
+			ctx.fill();
+			ctx.stroke();
+
+
+			ctx.beginPath();
+			ctx.moveTo(starfleetX+34, starfleetY+44);
+			ctx.lineTo(starfleetX+40, starfleetY+43);
+			ctx.lineTo(starfleetX+42, starfleetY+20);
+			ctx.lineTo(starfleetX+44, starfleetY+43);
+			ctx.lineTo(starfleetX+50, starfleetY+44);
+			ctx.lineTo(starfleetX+45, starfleetY+47);
+			ctx.lineTo(starfleetX+46, starfleetY+52);
+			ctx.lineTo(starfleetX+42, starfleetY+47);
+			ctx.lineTo(starfleetX+38, starfleetY+53);
+			ctx.lineTo(starfleetX+39, starfleetY+47);
+			ctx.closePath();
+			ctx.fillStyle = "#000";
+			ctx.strokeStyle = "#000";
+			ctx.fill();
+			ctx.stroke();
 			requestAnimationFrame(renderFrame);
 			return;
-		}
-		ctx.save();
-		ctx.setTransform(1,0,0,1,0,0);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-		ctx.restore();
+		} else {
+			ctx.save();
+			ctx.setTransform(1,0,0,1,0,0);
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.restore();
 
-		ctx.drawImage( decks[currentDeck], 0, 0 );
+			ctx.drawImage( decks[currentDeck], 0, 0 );
+			
+			if( plottr ){ plottr.render( ctx ); }
+		}
 		
-		if( plottr ){ plottr.render( ctx ); }
-	
 		
 		requestAnimationFrame(renderFrame);
     }
