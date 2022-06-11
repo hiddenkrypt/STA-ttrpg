@@ -35,7 +35,7 @@ var crewData = [
   },
   {
 		"id":"",
-		"name": "Doctor Floofles",
+		"name": "Ignatious Floofles",
     "title": "Dr. Floofles",
     "profileImg": "crew/Floofles.png",
     "pronouns": "It/They",
