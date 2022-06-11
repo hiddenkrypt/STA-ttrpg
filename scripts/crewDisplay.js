@@ -31,6 +31,7 @@ function init(){
   }
   function populateList(){
     
+    document.getElementById("crewImg").style.visibility = "hidden";
     let list = document.getElementById("list");
     list.innerHTML = "";
     let groups = crewData.map(e=>e[sortMode]).filter((e,i,a)=>a.indexOf(e)===i);
@@ -76,6 +77,7 @@ function init(){
   function populateCrewMember( title ){
     let record = crewData.find(c=>c.title === title );
     document.getElementById("crewTitle").innerHTML = record.title;
+    document.getElementById("crewImg").style.visibility = "visible";
     document.getElementById("crewImg").src = record.profileImg;
     document.getElementById("crewName").innerHTML = record.name;
     document.getElementById("crewPronounsShort").innerHTML = record.pronounsShort;
