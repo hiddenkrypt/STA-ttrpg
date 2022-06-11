@@ -94,7 +94,8 @@ function init(){
   document.getElementById("crewListButton").addEventListener("click", e=>{populateList();});
   document.getElementById("listControls").addEventListener("click",e=>{
     document.getElementById("groupDropdown").style.display = "flex";
-    document.getElementById("listControls").style.backgroundColor = "#000";
+    document.getElementById("listControls").style.backgroundColor = "#223366";
+    document.getElementById("listControls").style.color = "#223366";
   });
   document.getElementById("groupByRank").addEventListener("click",e=>{setGroup("rank")});
   document.getElementById("groupByName").addEventListener("click",e=>{setGroup("name")});
@@ -103,7 +104,8 @@ function init(){
   document.getElementById("groupBySpecies").addEventListener("click",e=>setGroup("species"));
   function setGroup(mode){
     document.getElementById("groupDropdown").style.display = "none";
-    document.getElementById("listControls").style.backgroundColor = "#6cf";
+    document.getElementById("listControls").style.backgroundColor = "#5588ee";
+    document.getElementById("listControls").style.color = "#000";
     document.getElementById("listControls").innerHTML = "Group By " + ((mode=="pronounsShort")?"PRONOUNS":mode.toUpperCase());
     sortMode = mode;
     populateList();
