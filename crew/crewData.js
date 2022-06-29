@@ -1,10 +1,9 @@
 var crewData = [
   {
-		"id":"",
 		"name": "NFN/NMI Llei'rala",
     "title": "Lt. Cmdr. Dr. Llei'rala  M.D./Ph.D",
     "profileImg": "crew/Lleirala.png",
-    "pronouns": "She/They, She/her preferred in professional contexts.",
+    "pronouns": "She/They, <br>She/her preferred in professional contexts.",
     "pronounsShort": "She/They",
     "rank": "Lieutenant Commander",
     "serial": "X-612-413",
@@ -17,7 +16,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Lok",
     "title": "Capt. Lok",
     "profileImg": "crew/Lok.png",
@@ -34,7 +32,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Ignatious Floofles",
     "title": "Dr. Floofles",
     "profileImg": "crew/Floofles.png",
@@ -51,7 +48,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Tobias Knight",
     "title": "Cmdr. Tobias Knight",
     "profileImg": "crew/Knight.png",
@@ -68,7 +64,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Ezra Kaleo",
     "title": "Cmdr. Ezra Kaleo",
     "profileImg": "crew/Kaleo.png",
@@ -85,7 +80,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Azie Concrex",
     "title": "Lt. Cmdr. Azie Concrex",
     "profileImg": "crew/Concrex.png",
@@ -102,7 +96,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "NFN/NMI Katag",
     "title": "Lt. Cmdr. Katag",
     "profileImg": "crew/Katag.png",
@@ -119,7 +112,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Pavil Shran",
     "title": "Lt. Cmdr. Pavil Shran",
     "profileImg": "crew/Shran.png",
@@ -136,7 +128,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "NFN/NMI Bune",
     "title": "Lt. Bune",
     "profileImg": "crew/Bune.png",
@@ -153,7 +144,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Shryreh Kall",
     "title": "Lt. Shryreh Kall",
     "profileImg": "crew/Kall.png",
@@ -170,7 +160,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Tilou Metri",
     "title": "Lt. Tilou Metri",
     "profileImg": "crew/Metri.png",
@@ -187,7 +176,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Seshana Rell",
     "title": "Lt. Seshana Rell",
     "profileImg": "crew/Rell.png",
@@ -204,7 +192,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Drozada Tez",
     "title": "Lt. Drozada Tez",
     "profileImg": "crew/Tez.png",
@@ -221,7 +208,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "NFN/NMI Zepht",
     "title": "Lt. Zepht",
     "profileImg": "crew/Zepht.png",
@@ -238,7 +224,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Vela Zhal",
     "title": "Lt.Jg. Vela Zhal",
     "profileImg": "crew/Zhal.png",
@@ -255,7 +240,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "NFN/NMI Velik",
     "title": "CPO Velik",
     "profileImg": "crew/Velik.png",
@@ -272,7 +256,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "NFN/NMI T'los",
     "title": "Ensign T'los",
     "profileImg": "crew/Tlos.png",
@@ -289,7 +272,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Zereh Jhahr",
     "title": "Lt. Zereh Jhahr",
     "profileImg": "crew/Jhahr.png",
@@ -306,7 +288,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "NFN/NMI Zirva",
     "title": "Lt. Zirva",
     "profileImg": "crew/Zirva.png",
@@ -315,7 +296,7 @@ var crewData = [
     "rank": "Lieutenant",
     "serial": "",
     "division": "Operations",
-    "assignment": "Peregrin Fighter Pilot, _ Squadron",
+    "assignment": "Peregrin Fighter Pilot /<br>_ Squadron",
     "species": "Trill",
     "dob": "",
     "pob": "",
@@ -323,7 +304,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "Starr Deretha Lyalis",
     "title": "Lt. Starr Deretha Lyalis",
     "profileImg": "crew/Lyalis.png",
@@ -332,7 +312,7 @@ var crewData = [
     "rank": "Lieutenant",
     "serial": "",
     "division": "Operations",
-    "assignment": "Peregrin Fighter Pilot, _ Squadron",
+    "assignment": "Peregrin Fighter Pilot /<br>_ Squadron",
     "species": "",
     "dob": "",
     "pob": "",
@@ -340,7 +320,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "NFN/NMI Pid",
     "title": "Lt. Pid",
     "profileImg": "crew/Pid.png",
@@ -349,7 +328,7 @@ var crewData = [
     "rank": "Lieutenant",
     "serial": "",
     "division": "Operations",
-    "assignment": "Peregrin Fighter Pilot, _ Squadron",
+    "assignment": "Peregrin Fighter Pilot /<br>_ Squadron",
     "species": "Ferengi",
     "dob": "",
     "pob": "",
@@ -357,7 +336,6 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"id":"",
 		"name": "NFN/NMI Kiisa",
     "title": "Lt. Kiisa",
     "profileImg": "crew/Kiisa.png",
@@ -375,7 +353,6 @@ var crewData = [
   }/*,
 
   {
-		"id":"",
 		"name": "",
     "title": "",
     "profileImg": "crew/",

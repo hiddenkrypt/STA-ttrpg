@@ -1,78 +1,99 @@
+
+
 .bucketList{
-  display:flex;
-  flex-wrap:wrap;
+  display: flex;
+  flex-wrap: wrap;
   flex-flow: row wrap;
-  gap:2em
+  gap: 2em
 }
 .bucketTitle {
   color: #fff;
-  font-weight:bold;
+  font-weight: bold;
 }
 .bucketItem {
-  margin-right:2em;
-  cursor:pointer;
+  margin-right: 2em;
+  cursor: pointer;
 }
-@media only screen and (max-width: 600px) {
+.bucketItem:hover{
+  color: #aaaaff;
+  text-decoration:underline;
+}
 
+@media only screen and (max-width: 600px) {
   .scroll-top,.right-frame-top,
   .left-frame-top,.left-frame {
-    display:none;
+    display: none;
   }
 }
 
 #crewListContainer{
-  left: 0;
+  margin-left: 1em;
+  display: block;
+}
+#crewListButton:hover{
+  text-decoration:underline;
+  border-right:2px solid #0000ff;
+  border-top:2px solid #0000ff;
+  border-bottom:2px solid #0000ff;
 }
 #crewListButton{
   background-color: #7799cc;
   color: #000;
   border-radius: 0 1em 1em 0 ;
-  border: 1px solid #333;
-  padding-left:1em;
-  padding-right:1em;
-  padding-top:.5em;
-  padding-bottom:.5em;
-  display: inline-block;
-  min-width: 300px;
-  text-align: right;
-}
-
-#listControls{
-  float: right;
-  background-color: #5588ee;
-  color: #000;
-  border-radius: 1em 0 0 1em;
-  border: 1px solid #333;
+  border: 2px solid #7799cc;
   padding-left: 1em;
   padding-right: 1em;
   padding-top: .5em;
   padding-bottom: .5em;
   display: inline-block;
   min-width: 300px;
-  text-align: left;
+  text-align: right;
+  cursor: pointer;
+}
+
+#listControls:hover{
+  text-decoration:underline;
+  border-right:2px solid #0000ff;
+  border-top:2px solid #0000ff;
+  border-bottom:2px solid #0000ff;
+}
+#listControls{
+  margin-left: -1em;
+  background-color: #7799cc;
+  color: #000;
+  border-radius: 0 1em 1em 0 ;
+  border: 2px solid #7799cc;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  display: inline-block;
+  min-width: 300px;
+  text-align: right;
+  cursor: pointer;
 }
 
 #groupDropdown{
   display: none;
-  padding-top:.5em;
-  padding-bottom:.5em; 
+  padding-top: 0em;
+  padding-bottom: .5em; 
   flex-wrap: wrap;
   flex-flow: row wrap;
-  gap:2em;
+  gap: 2em;
   position: absolute;
-  margin-top: 0em;
-  margin-left:4em;
+  margin-top: -2em;
+  margin-left: 2em;
 }
 .dropdownItem {
   background-color: #6cf;
   color: #000;
-  border-radius:1em;
-  padding-left:1em;
-  padding-right:1em;
-  padding-top:.5em;
-  padding-bottom:.5em;
+  border-radius: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
   min-width: 160px;
-  cursor:pointer;
+  cursor: pointer;
 }
 #groupByRank{
   background-color: #455577;
@@ -88,4 +109,26 @@
 }
 #groupBySpecies{
   
+}
+
+#crewTitleContainer{
+  position: fixed;
+  z-index: 100;
+  bottom: 1em;
+  right: 0;
+  display: block; 
+  background-color: rgba(0,0,0,.8);
+  padding-left: 1em;
+  padding-right: 2em;
+  padding-bottom: 1em;
+}
+#crewImg{
+  margin-top: 2em;
+  margin-left: 2em;
+  align-self: start;
+}
+#crewStats{
+  flex-wrap: wrap; 
+  display: flex; 
+  gap: 2em;
 }

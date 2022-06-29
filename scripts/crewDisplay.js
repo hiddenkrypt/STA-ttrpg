@@ -27,7 +27,7 @@ function init(){
   function displayMember(){
     listContainer.style.display = "none";
     memberContainer.style.display = "block";
-    window.scrollTo( 0, 0 );
+    document.getElementById("contentTitle").scrollIntoView( true );
   }
   function populateList(){
     
@@ -106,7 +106,7 @@ function init(){
   document.getElementById("groupBySpecies").addEventListener("click",e=>setGroup("species"));
   function setGroup(mode){
     document.getElementById("groupDropdown").style.display = "none";
-    document.getElementById("listControls").style.backgroundColor = "#5588ee";
+    document.getElementById("listControls").style.backgroundColor = "#7799cc";
     document.getElementById("listControls").style.color = "#000";
     document.getElementById("listControls").innerHTML = "Group By " + ((mode=="pronounsShort")?"PRONOUNS":mode.toUpperCase());
     sortMode = mode;
@@ -115,4 +115,4 @@ function init(){
   setGroup( "rank" );
 }
 
-window.onload = init;s
+window.onload = init;
