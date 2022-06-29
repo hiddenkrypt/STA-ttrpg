@@ -54,8 +54,10 @@ function init(){
       bucketTitle.innerHTML = bucket[0][sortMode];
       if(sortMode=="name"){
         bucketTitle.innerHTML = "Alphabetical";  
-      }
-      if(bucketTitle.innerHTML == ""){
+      } else if ( sortMode == "rank" ) {
+		appendPips( bucketTitle );
+	  }
+      if ( bucketTitle.innerHTML == "" ) {
         bucketTitle.innerHTML = "[DATA MISSING]";
       }
       bucketContainer.appendChild(bucketTitle);
@@ -113,6 +115,34 @@ function init(){
     populateList();
   }
   setGroup( "rank" );
+  function appendPips( rankTitle ){
+	  
+	let spacer = document.createElement("span");
+	spacer.classList.add("spacer");
+	rankTitle.appendChild(spacer);
+	let rankpips = {
+      "Captain": {full:4, half:0},
+      "Commander": {full:3, half:0},
+      "Lieutenant Commander": {full:2, half:1},
+      "Lieutenant": {full:2, half:0},
+      "Lieutenant Junior Grade": {full:1, half:1},
+       "Ensign": {full:1, half:0},
+	   "Chief Petty Officer":  {full:0, half:3},
+	};
+	let pips = rankpips[rankTitle.innerText] || {full:0,half:0};
+	for( let i = 0; i < pips.full; i++ ) {
+	  let img= document.createElement("img");
+	  img.src = "crew/rankPip.png";
+	  img.classList.add("pip");
+	  rankTitle.appendChild(img);
+	}
+	for( let i = 0; i < pips.half; i++ ) {
+	  let img= document.createElement("img");
+	  img.src = "crew/rankPip-hollow.png";
+	  img.classList.add("pip");
+	  rankTitle.appendChild(img);
+	}
+  }
 }
 
 window.onload = init;
