@@ -27,7 +27,7 @@ function init(){
   function displayMember(){
     listContainer.style.display = "none";
     memberContainer.style.display = "block";
-    document.getElementById("contentTitle").scrollIntoView( true );
+    document.getElementById("topbar").scrollIntoView( true );
   }
   function populateList(){
     
