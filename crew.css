@@ -120,9 +120,12 @@
   background-color: #7799cc;
 }
 #groupBySpecies{
-  
 }
-
+#groupByPlayer{
+  background-color: rgba(0,0,0,.6);
+  border: 2px solid rgba(60,80,140,.8);
+  color: rgba(60,100,240,.6);
+}
 #crewTitleContainer{
   position: fixed;
   z-index: 100;

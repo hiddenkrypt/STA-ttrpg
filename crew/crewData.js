@@ -1,6 +1,7 @@
 var crewData = [
   {
-		"name": "NFN/NMI Llei'rala",
+    "player": "Ada",
+    "name": "NFN/NMI Llei'rala",
     "title": "Lt. Cmdr. Dr. Llei'rala  M.D./Ph.D",
     "profileImg": "crew/Lleirala.png",
     "pronouns": "She/They, <br>She/her preferred in professional contexts.",
@@ -13,10 +14,11 @@ var crewData = [
     "dob": "2369",
     "pob": "Dier'Dalan",
     "priorHistory": "<h4>Early Life</h4>Llei'rala grew up with her parents, Kenra'sere and Seihwi, on the small Romulan Empire colony of Dier'Dalan. By all accounts she showed an early talent and enthusiasm for medicine. In 2374 the colony was attacked by the dominion. Llei'rala and her mother Kenra'sere escaped and began living on Romulus, but her parent Seiwhi died in the attack.  She completed her initial studies on Romulus at the Medical Academy of the Romulan Empire, and began post-graduate studies at the same until 2387. <br>Llei'rala was evacuated from Romulus before it's destruction from the romulan Supernova in 2387. Her mother died in the event. She spent two years volunteering as a medic to help her fellow refugees, before applying to starfleet with a goal of finishing her MD.</p><p><h4>Starfleet Medical Academy</h4>Llei'rala attended Starfleet Medical Academy in 2390 and earned her Doctorate of Medicine and Philosophy in 2395. However, at the time she was only interested in the medical program, and so was not a starfleet cadet; a rare but not unheard of situation.<br>Llei'rala was a rigorous student, and impressed professors with the knowledge she had already gained through prior study. This did not offer much of a shortcut in her studies, however, as her previous time at the Medical Academy of the Romulan Empire did not include nearly as much Xenobiology as required by Starfleet, and a large amount of her existing studies were not accepted.<h4>Starfleet service and Enlistment</h4>Llei'Rala's residency included a tour as a civilian consultant on a starfleet medical ship, cementing her association with the Federation. At the end of that tour, Llei'rala enrolled in Starfleet Academy as a cadet. She was considered a model student and graduated with honors.</p>",
-    "serviceRecord": "<ul><li>2395 - Awarded MD-PhD dual degree.  		<li>2395 - Residency at Johns Hopkins Hospital (2 years)<li>2397 - Residency as Corpsman on <i>USS Daishan Dao</i> Hospial Ship (2 years)<li>2399 - Enrolled in Starfleet Academy<li>2402 - Graduated with honors from Starfleet Academy and Commissioned as Lieutenant Junior Grade<li>2402 - Assigned to <i>U.S.S. Phan Xi Păng</i> as Medical Officer (2 years)<ul><li>2403 - Captain's Commendation</ul> 		<li>2404 - Assigned to <i>U.S.S. Whitney</i> as Medical Officer (5 years) 			<ul><li>2406 - Captain's Commendation<li>2406 - Promoted to Lieutenant<li>2408 - Awarded Starfleet Silver Palm for actions on stardate 57231<li>2409 - Awarded Extended Tour Ribbon </li> 				<li>2409 - Promoted to Lieutenant commander</ul></li><li>2409 - Assigned to Starbase 413 as Research Medical Officer<ul><li>2413 - Received The Machri-Cherk award for outstanding medical research<li>2414 - Awarded 20 Years of Service Ribbon</ul><li>2416 - Assigned to <i>U.S.S. Sierra</i> as Chief Medical Officer</ul>"
+    "serviceRecord": "<ul><li>2395 - Awarded MD-PhD dual degree.      <li>2395 - Residency at Johns Hopkins Hospital (2 years)<li>2397 - Residency as Corpsman on <i>USS Daishan Dao</i> Hospial Ship (2 years)<li>2399 - Enrolled in Starfleet Academy<li>2402 - Graduated with honors from Starfleet Academy and Commissioned as Lieutenant Junior Grade<li>2402 - Assigned to <i>U.S.S. Phan Xi Păng</i> as Medical Officer (2 years)<ul><li>2403 - Captain's Commendation</ul>     <li>2404 - Assigned to <i>U.S.S. Whitney</i> as Medical Officer (5 years)     	<ul><li>2406 - Captain's Commendation<li>2406 - Promoted to Lieutenant<li>2408 - Awarded Starfleet Silver Palm for actions on stardate 57231<li>2409 - Awarded Extended Tour Ribbon </li>         <li>2409 - Promoted to Lieutenant commander</ul></li><li>2409 - Assigned to Starbase 413 as Research Medical Officer<ul><li>2413 - Received The Machri-Cherk award for outstanding medical research<li>2414 - Awarded 20 Years of Service Ribbon</ul><li>2416 - Assigned to <i>U.S.S. Sierra</i> as Chief Medical Officer</ul>"
   },
   {
-		"name": "Lok",
+    "player": "NPC",
+    "name": "Lok",
     "title": "Capt. Lok",
     "profileImg": "crew/Lok.png",
     "pronouns": "He/Him",
@@ -32,7 +34,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "Ignatious Floofles",
+    "player": "Tracy",
+    "name": "Ignatious Floofles",
     "title": "Dr. Floofles",
     "profileImg": "crew/Floofles.png",
     "pronouns": "It/They",
@@ -48,7 +51,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "Tobias Knight",
+    "player": "NPC",
+    "name": "Tobias Knight",
     "title": "Cmdr. Tobias Knight",
     "profileImg": "crew/Knight.png",
     "pronouns": "He/Him",
@@ -64,7 +68,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "Ezra Kaleo",
+    "player": "NPC",
+    "name": "Ezra Kaleo",
     "title": "Cmdr. Ezra Kaleo",
     "profileImg": "crew/Kaleo.png",
     "pronouns": "He/Him",
@@ -80,7 +85,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "Azie Concrex",
+    "player": "NPC",
+    "name": "Azie Concrex",
     "title": "Lt. Cmdr. Azie Concrex",
     "profileImg": "crew/Concrex.png",
     "pronouns": "She/Her",
@@ -96,7 +102,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "NFN/NMI Katag",
+    "player": "Mekk",
+    "name": "NFN/NMI Katag",
     "title": "Lt. Cmdr. Katag",
     "profileImg": "crew/Katag.png",
     "pronouns": "None, He/They if you must",
@@ -112,7 +119,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "Pavil Shran",
+    "player": "Tracy",
+    "name": "Pavil Shran",
     "title": "Lt. Cmdr. Pavil Shran",
     "profileImg": "crew/Shran.png",
     "pronouns": "They/Them",
@@ -128,7 +136,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "NFN/NMI Bune",
+    "player": "NPC",
+    "name": "NFN/NMI Bune",
     "title": "Lt. Bune",
     "profileImg": "crew/Bune.png",
     "pronouns": "He/Him",
@@ -144,7 +153,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "Shryreh Kall",
+    "player": "NPC",
+    "name": "Shryreh Kall",
     "title": "Lt. Shryreh Kall",
     "profileImg": "crew/Kall.png",
     "pronouns": "They/Them",
@@ -160,7 +170,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "Tilou Metri",
+    "player": "Brett",
+    "name": "Tilou Metri",
     "title": "Lt. Tilou Metri",
     "profileImg": "crew/Metri.png",
     "pronouns": "",
@@ -176,7 +187,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "Seshana Rell",
+    "player": "Mekk",
+    "name": "Seshana Rell",
     "title": "Lt. Seshana Rell",
     "profileImg": "crew/Rell.png",
     "pronouns": "She/Her",
@@ -192,7 +204,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "Drozada Tez",
+    "player": "NPC",
+    "name": "Drozada Tez",
     "title": "Lt. Drozada Tez",
     "profileImg": "crew/Tez.png",
     "pronouns": "She/They",
@@ -208,7 +221,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "NFN/NMI Zepht",
+    "player": "Scott",
+    "name": "NFN/NMI Zepht",
     "title": "Lt. Zepht",
     "profileImg": "crew/Zepht.png",
     "pronouns": "He/Him",
@@ -224,7 +238,8 @@ var crewData = [
     "serviceRecord": "<ul> <li>2410 - Completed Enlistment Training, designated as a pilot and repair technician. <li>2410 - Assigned to the USS Thunderchild <ul> <li>2415 - Awarded the Decoration for Valor and Gallantry in 2414 for emergency repairs performs during battle. <li>2415 - Commissioned as an officer, Lieutenant Junior Grade and assigned as a fighter squadron commander. <li>2415 - Awarded Silver Palms for action perform during the Iconian War. <li>2415 - Awarded Extended Tour Ribbon <li>2415 - Granted an Extended Leave of Absence. </ul></li> <li>2415 - Received supplementary emergency response training. <li>2415 - Promoted to Lieutenant Senior Grade <li>2416 - Assigned to U.S.S. Sierra as a squadron commander and emergency response specialist. </li> </ul>"
   },
   {
-		"name": "Vela Zhal",
+    "player": "Ada",
+    "name": "Vela Zhal",
     "title": "Lt.Jg. Vela Zhal",
     "profileImg": "crew/Zhal.png",
     "pronouns": "She/Her",
@@ -240,7 +255,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "NFN/NMI Velik",
+    "player": "Brett",
+    "name": "NFN/NMI Velik",
     "title": "CPO Velik",
     "profileImg": "crew/Velik.png",
     "pronouns": "He/Him",
@@ -256,7 +272,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "NFN/NMI T'los",
+    "player": "NPC",
+    "name": "NFN/NMI T'los",
     "title": "Ensign T'los",
     "profileImg": "crew/Tlos.png",
     "pronouns": "They/Them",
@@ -272,7 +289,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "Zereh Jhahr",
+    "player": "NPC",
+    "name": "Zereh Jhahr",
     "title": "Lt. Zereh Jhahr",
     "profileImg": "crew/Jhahr.png",
     "pronouns": "She/Her",
@@ -288,7 +306,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "NFN/NMI Zirva",
+    "player": "NPC",
+    "name": "NFN/NMI Zirva",
     "title": "Lt. Zirva",
     "profileImg": "crew/Zirva.png",
     "pronouns": "They/Them",
@@ -304,7 +323,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "Starr Deretha Lyalis",
+    "player": "NPC",
+    "name": "Starr Deretha Lyalis",
     "title": "Lt. Starr Deretha Lyalis",
     "profileImg": "crew/Lyalis.png",
     "pronouns": "She/Her",
@@ -320,7 +340,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "NFN/NMI Pid",
+    "player": "NPC",
+    "name": "NFN/NMI Pid",
     "title": "Lt. Pid",
     "profileImg": "crew/Pid.png",
     "pronouns": "She/Her",
@@ -336,7 +357,8 @@ var crewData = [
     "serviceRecord": ""
   },
   {
-		"name": "NFN/NMI Kiisa",
+    "player": "NPC",
+    "name": "NFN/NMI Kiisa",
     "title": "Lt. Kiisa",
     "profileImg": "crew/Kiisa.png",
     "pronouns": "She/Her",
@@ -353,7 +375,8 @@ var crewData = [
   }/*,
 
   {
-		"name": "",
+    "player": "",
+    "name": "",
     "title": "",
     "profileImg": "crew/",
     "pronouns": "",

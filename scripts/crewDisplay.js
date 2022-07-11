@@ -39,6 +39,13 @@ function init(){
     if( sortMode == "rank" ){
       groups = groups.sort( (a,b) => rankOrder[a] - rankOrder[b] ); 
     }
+	if( sortMode == "player" ){
+      groups = groups.sort( (a,b) => {
+		if( b == "NPC" ){ return -1; }
+		if( a == "NPC" ){ return  1; }
+		return a - b; 
+	  }); 	
+	}
     let buckets = new Array(groups.length).fill(0).map(e=>new Array(0));
     if (sortMode == "name" ){
        buckets = [crewData.sort((a,b) => (a.name > b.name)?1:-1) ];
@@ -106,6 +113,7 @@ function init(){
   document.getElementById("groupByPronouns").addEventListener("click",e=>setGroup("pronounsShort"));
   document.getElementById("groupByDivision").addEventListener("click",e=>setGroup("division"));
   document.getElementById("groupBySpecies").addEventListener("click",e=>setGroup("species"));
+  document.getElementById("groupByPlayer").addEventListener("click",e=>setGroup("player"));
   function setGroup(mode){
     document.getElementById("groupDropdown").style.display = "none";
     document.getElementById("listControls").style.backgroundColor = "#7799cc";
