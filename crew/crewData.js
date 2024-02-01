@@ -443,8 +443,8 @@ var crewData = [
   },
   {
     "player": "Tracy",
-    "name": "Ensign Kai",
-    "title": "Ens NFN/NMI Kai",
+    "name": "NFN/NMI Kai",
+    "title": "Ensign Kai",
     "profileImg": "crew/Kai.png",
     "pronouns": "They/Them",
     "pronounsShort": "They/Them",
@@ -460,8 +460,8 @@ var crewData = [
   },
   {
     "player": "Mekk",
-    "name": "T'lair",
-    "title": "Ensign NFN/NMI T'lair",
+    "name": "NFN/NMI T'lair",
+    "title": "Ensign T'lair",
     "profileImg": "crew/Tlair.png",
     "pronouns": "",
     "pronounsShort": "",
