@@ -159,10 +159,13 @@ window.onload = function () {
 			ctx.font = "40px Antonio";
 			ctx.fillStyle = "#fff";
 			let lText= "LOADING"; 
+      let loadingPercentage = "000"+(100 * loadedFiles / fileCount).toFixed(2) + "%";
+      loadingPercentage = loadingPercentage.slice(3);
 			var starfleetX = canvas.width/2 - 26;
 			var starfleetY = canvas.height/3;
-			ctx.fillText(lText+"...", canvas.width/2 - ctx.measureText(lText).width/2+14, starfleetY);
-			ctx.fillRect(-500+tick*3,canvas.height/2.3-(tick/2), 10, 10 );
+			ctx.fillText( lText + "...", canvas.width / 2 - ctx.measureText(lText).width / 2 + 14, starfleetY );
+			ctx.fillText( loadingPercentage, canvas.width / 2 - ctx.measureText(loadingPercentage).width / 2 + 14, starfleetY*2 );
+			//ctx.fillRect(-500+tick*3,canvas.height/2.3-(tick/2), 10, 10 );
 			if( tick >= tickMax ){
 				tick = 0;
 			}
@@ -174,6 +177,7 @@ window.onload = function () {
 			ctx.stroke();
 			ctx.closePath();
 
+			ctx.lineWidth = 4;
 			ctx.beginPath();
 			ctx.moveTo(starfleetX+14, starfleetY+94);
 			ctx.bezierCurveTo(starfleetX+20, starfleetY+48, starfleetX+41, starfleetY+7 , starfleetX+41, starfleetY+7);
@@ -187,6 +191,7 @@ window.onload = function () {
 			ctx.stroke();
 
 
+			ctx.lineWidth = 1;
 			ctx.beginPath();
 			ctx.moveTo(starfleetX+34, starfleetY+44);
 			ctx.lineTo(starfleetX+40, starfleetY+43);
